@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="chart_div" style="width: 100%; height: 500px;"></div>
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Month', '2019', '2018'],
+      ['January',  41,      60,],
+      ['February',  42,      37],
+      ['March',  35,       38],
+      ['April',  49,      39],
+      ['May',    43,    39],
+      ['June',    45,    44],
+      ['July',    60,    46],
+      ['August',    48,    41],
+      ['September',    42,    37],
+      ['October',    35,    33],
+      ['November',    51,    47],
+      ['December',    45,    35],
+
+    ]);
+
+    var options = {
+      title: 'Murders in T&T by month for 2018-2019',
+      hAxis: {title: 'Month',  titleTextStyle: {color: '#333'}},
+      vAxis: {minValue: 0}
+    };
+
+    var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+
+</script>
+
+</head>
+<body>
+
+</body>
+
+</html>
